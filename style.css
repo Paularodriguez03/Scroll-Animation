@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fffde7;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+  /* si se recorta el contenido, se agrega una barra de desplazamiento 
+  o se muestra el contenido de desbordamiento de un elemento a nivel de 
+  bloque, cuando se desborda en los bordes izquierdo y derecho*/
+}
+
+h1 {
+  margin: 10px;
+}
+
+.box {
+  background-color: rgb(95, 170, 231);
+  color: #fff;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.11);
+  transform: translateX(400%);
+  /*este transform es para las cajas que ingresan desde la 
+  izquierda de la pantalla*/
+  transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+/*el even en este caso me relaciona los  elementos pares 
+y les da un movimineto entrtando por la derecha*/
+/*su opuesto es odd*/
+
+.box.show {
+  transform: translateX(0);
+}
+
+.box h2 {
+  font-size: 45px;
+}
